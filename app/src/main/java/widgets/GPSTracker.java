@@ -1,5 +1,7 @@
-package com.ps.lorry.util;
+package widgets;
 
+import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog.Builder;
 import android.app.Service;
@@ -7,15 +9,20 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.IBinder;
-import android.support.v4.app.ActivityCompat;
 import android.util.Log;
+
+import androidx.annotation.RequiresApi;
+import androidx.core.app.ActivityCompat;
+
 import java.util.List;
 import java.util.Locale;
 
@@ -49,6 +56,7 @@ public class GPSTracker extends Service implements LocationListener {
         }
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     public GPSTracker(Context context) {
         this.isGPSEnabled = false;
         this.isNetworkEnabled = false;
@@ -64,6 +72,8 @@ public class GPSTracker extends Service implements LocationListener {
         this.mContext = null;
     }
 
+    @SuppressLint("WrongConstant")
+    @RequiresApi(api = Build.VERSION_CODES.M)
     public Location getLocation() {
         try {
             this.locationManager = (LocationManager) this.mContext.getSystemService("location");
@@ -73,6 +83,9 @@ public class GPSTracker extends Service implements LocationListener {
                 this.canGetLocation = true;
                 if (this.isNetworkEnabled) {
                     try {
+                        if (checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+
+                        }
                         this.locationManager.requestLocationUpdates("network", MIN_TIME_BW_UPDATES, 10.0f, this);
                         Log.d("Network", "Network");
                         if (this.locationManager != null) {
@@ -119,10 +132,10 @@ public class GPSTracker extends Service implements LocationListener {
     }
 
     public double getLatitude() {
-        if (this.location != null) {
-            this.latitude = this.location.getLatitude();
+        if (location != null) {
+            latitude = this.location.getLatitude();
         }
-        return this.latitude;
+        return latitude;
     }
 
     public String getCompleteAddressString(double LATITUDE, double LONGITUDE) {
@@ -144,10 +157,10 @@ public class GPSTracker extends Service implements LocationListener {
     }
 
     public double getLongitude() {
-        if (this.location != null) {
-            this.longitude = this.location.getLongitude();
+        if (location != null) {
+            longitude = location.getLongitude();
         }
-        return this.longitude;
+        return longitude;
     }
 
     public boolean canGetLocation() {

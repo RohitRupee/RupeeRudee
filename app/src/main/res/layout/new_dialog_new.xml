@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+
+    android:orientation="vertical">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <ImageView
+            android:id="@+id/imgCross"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_cancel_black_24dp_new_"
+            android:layout_gravity="right"
+            android:padding="@dimen/_10sdp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_40sdp"
+            android:orientation="vertical">
+
+
+            <customtools.MediumTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Repayment Details"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_16sdp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dip"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@color/gray_btn_bg_color" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10sdp">
+
+                <customtools.MediumTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp"
+                    android:text="Loan Amount Requested"/>
+                <customtools.RegularTextView
+                    android:id="@+id/loanamountrequestred"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$50000"
+                    android:textColor="@color/black"
+                    android:layout_alignParentRight="true"
+                    android:gravity="left"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10sdp">
+
+                <customtools.MediumTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Loan Tenure "
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp" />
+                <customtools.RegularTextView
+                    android:id="@+id/disamount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$50000"
+                    android:textColor="@color/black"
+                    android:layout_alignParentRight="true"
+                    android:gravity="left"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10sdp">
+
+                <customtools.MediumTextView
+                    android:id="@+id/txtAmountbelow30"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp"
+                    android:text="Monthly Interest"/>
+                <customtools.RegularTextView
+                    android:id="@+id/repamount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Upto 2.5%  "
+                    android:textColor="@color/black"
+                    android:layout_alignParentRight="true"
+                    android:gravity="left"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10sdp">
+
+                <customtools.MediumTextView
+                    android:id="@+id/txtAmountbefore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp"
+                    android:text="Processing Fees"/>
+                <customtools.RegularTextView
+                    android:id="@+id/date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Upto 10%"
+                    android:textColor="@color/black"
+                    android:layout_alignParentRight="true"
+                    android:gravity="left"/>
+            </RelativeLayout>
+            <customtools.MediumTextView
+                android:id="@+id/close"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Close"
+                android:gravity="center"
+                android:background="@color/colorPrimary"
+                android:textColor="@color/white"
+                android:padding="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_30sdp"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

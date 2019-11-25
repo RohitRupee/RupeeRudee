@@ -10,5 +10,4 @@ public class ApplicationError extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.application_number_error);
     }
-
 }

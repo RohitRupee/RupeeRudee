@@ -1,4 +1,4 @@
-package com.ps.lorry.util;
+package services;
 
 import android.app.ActivityManager;
 import android.app.ActivityManager.RunningAppProcessInfo;
@@ -11,8 +11,9 @@ import android.graphics.BitmapFactory;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Build.VERSION;
-import com.google.android.gms.drive.DriveFile;
-import com.ps.lorry.MainActivity;
+
+import com.rupeeredee.app.MainActivity;
+
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -62,9 +63,7 @@ public class NotificationUtils {
         }
     }
 
-    public static void linkDialog(Context context) {
-        context.startActivity(new Intent(context, MainActivity.class).addFlags(DriveFile.MODE_READ_ONLY));
-    }
+
 
     public Bitmap getBitmapFromURL(String strURL) {
         try {

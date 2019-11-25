@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+    <LinearLayout
+        android:id="@+id/nocredit"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:gravity="center">
+        <ImageView
+            android:id="@+id/imgFile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_forma_1_"/>
+        <customtools.MediumTextView
+            android:id="@+id/no_record_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:textSize="@dimen/_14sdp"
+            android:layout_margin="20dp"
+            android:text="Currently you do not have any credit score."/>
+    </LinearLayout>
+    <RelativeLayout
+        android:id="@+id/showcreddit"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_70sdp"
+        android:visibility="gone"
+        android:src="@drawable/experian"
+        android:layout_margin="@dimen/_10sdp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+        <customtools.MediumTextView
+            android:id="@+id/txtdate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp"
+            android:gravity="center"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:text="This credit score is courtsey Experian an on 27-oct-2019"/>
+
+        <credit_score_view.OldCreditSesameView
+            android:id="@+id/sesame_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            android:layout_below="@+id/txtdate"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center" />
+
+    </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="@dimen/_10sdp"
+            >
+        <customtools.MediumTextView
+            android:id="@+id/txtNewcredit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_10sdp"
+            android:gravity="center"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:text="Your latest credit score shall be updated here when you apply for another loan through RupeeRedee"/>
+        <Button
+            android:id="@+id/btnCalculate"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginLeft="@dimen/_50sdp"
+            android:layout_marginRight="@dimen/_50sdp"
+            android:layout_gravity="center"
+            android:textSize="@dimen/_12sdp"
+            android:layout_below="@+id/txtNewcredit"
+            android:background="@drawable/apply_btn_bg"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text="  APPLY  NOW   "
+            android:textColor="@color/colorWindowBackground" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

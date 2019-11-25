@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.mukesh;
+package otp;
 
 import android.animation.ValueAnimator;
 import android.content.Context;
@@ -31,13 +31,7 @@ import android.graphics.RectF;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
-import android.support.annotation.ColorInt;
-import android.support.annotation.DrawableRes;
-import android.support.annotation.Nullable;
-import android.support.annotation.Px;
-import android.support.v4.content.res.ResourcesCompat;
-import android.support.v4.view.ViewCompat;
-import android.support.v7.widget.AppCompatEditText;
+
 import android.text.InputFilter;
 import android.text.TextPaint;
 import android.text.TextUtils;
@@ -46,6 +40,16 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
 import android.view.inputmethod.EditorInfo;
+
+import androidx.annotation.ColorInt;
+import androidx.annotation.DrawableRes;
+import androidx.annotation.Nullable;
+import androidx.annotation.Px;
+import androidx.appcompat.widget.AppCompatEditText;
+import androidx.core.content.res.ResourcesCompat;
+import androidx.core.view.ViewCompat;
+
+import com.rupeeredee.app.R;
 
 public class OtpView extends AppCompatEditText {
 
@@ -192,14 +196,14 @@ public class OtpView extends AppCompatEditText {
 
   @Override
   protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-    int widthMode = MeasureSpec.getMode(widthMeasureSpec);
-    int heightMode = MeasureSpec.getMode(heightMeasureSpec);
-    int widthSize = MeasureSpec.getSize(widthMeasureSpec);
-    int heightSize = MeasureSpec.getSize(heightMeasureSpec);
+    int widthMode = View.MeasureSpec.getMode(widthMeasureSpec);
+    int heightMode = View.MeasureSpec.getMode(heightMeasureSpec);
+    int widthSize = View.MeasureSpec.getSize(widthMeasureSpec);
+    int heightSize = View.MeasureSpec.getSize(heightMeasureSpec);
     int width;
     int height;
     int boxHeight = otpViewItemHeight;
-    if (widthMode == MeasureSpec.EXACTLY) {
+    if (widthMode == View.MeasureSpec.EXACTLY) {
       width = widthSize;
     } else {
       int boxesWidth =
@@ -209,7 +213,7 @@ public class OtpView extends AppCompatEditText {
         width -= (otpViewItemCount - 1) * lineWidth;
       }
     }
-    height = heightMode == MeasureSpec.EXACTLY ? heightSize
+    height = heightMode == View.MeasureSpec.EXACTLY ? heightSize
         : boxHeight + getPaddingTop() + getPaddingBottom();
     setMeasuredDimension(width, height);
   }
@@ -623,17 +627,7 @@ public class OtpView extends AppCompatEditText {
     return DefaultMovementMethod.getInstance();
   }
 
-  /**
-   * Sets the line color for all the states (normal, selected,
-   * focused) to be this color.
-   *
-   * @param color A color value in the form 0xAARRGGBB.
-   * Do not pass a resource ID. To get a color value from a resource ID, call
-   * {@link android.support.v4.content.ContextCompat#getColor(Context, int) getColor}.
-   * @attr ref R.styleable#OtpView_lineColor
-   * @see #setLineColor(ColorStateList)
-   * @see #getLineColors()
-   */
+
   public void setLineColor(@ColorInt int color) {
     lineColor = ColorStateList.valueOf(color);
     updateColors();
@@ -902,15 +896,7 @@ public class OtpView extends AppCompatEditText {
     return cursorWidth;
   }
 
-  /**
-   * Sets the cursor color.
-   *
-   * @param color A color value in the form 0xAARRGGBB.
-   * Do not pass a resource ID. To get a color value from a resource ID, call
-   * {@link android.support.v4.content.ContextCompat#getColor(Context, int) getColor}.
-   * @attr ref R.styleable#OtpView_cursorColor
-   * @see #getCursorColor()
-   */
+
   public void setCursorColor(@ColorInt int color) {
     cursorColor = color;
     if (isCursorVisible()) {

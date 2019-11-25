@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@color/colorWhite"
+    android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimary"
+        android:layout_height="?attr/actionBarSize">
+
+        <customtools.MediumTextView
+            android:id="@+id/txtPayType"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="PAY NOW"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/heading1_text_size" />
+
+        <ImageView
+            android:id="@+id/imgBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_centerVertical="true"
+            android:layout_margin="@dimen/_10sdp"
+            android:src="@drawable/ic_arrow_back_black_24dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/containerPayList"
+        android:visibility="visible"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:scrollbars="none"
+            android:layout_above="@+id/foot">
+
+            <LinearLayout
+                android:background="@color/colorWindowBackground"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin">
+
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center">
+
+                    <LinearLayout
+                        android:weightSum="2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/imgfull"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:background="@drawable/price_bg"
+                        android:padding="@dimen/small_padding">
+
+                        <customtools.RegularTextView
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/form_text_size"
+                            android:text="Loan Number"
+                            android:textColor="@color/colorTextBlack" />
+
+                        <customtools.LightTextView
+                            android:id="@+id/lblLoanNum"
+                            android:gravity="left"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textSize="@dimen/form_text_size"
+                            android:textColor="@color/colorTextForm" />
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center">
+
+                    <LinearLayout
+                        android:weightSum="2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/imgfull"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:background="@drawable/price_bg"
+                        android:padding="@dimen/small_padding">
+
+                        <customtools.RegularTextView
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/form_text_size"
+                            android:text="Total Loan Amount"
+                            android:textColor="@color/colorTextBlack" />
+
+                        <TextView
+                            android:id="@+id/lblLoanAmt"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:text=""
+                            android:textColor="@color/colorTextForm"
+                            android:textSize="@dimen/form_text_size" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlLoanTerm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center">
+
+                    <LinearLayout
+                        android:weightSum="2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/imgfull"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:background="@drawable/price_bg"
+                        android:padding="@dimen/small_padding">
+
+                        <customtools.RegularTextView
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/form_text_size"
+                            android:text="Tenure"
+                            android:textColor="@color/colorTextBlack" />
+
+                        <customtools.LightTextView
+                            android:id="@+id/lblLoanTerm"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:text=""
+                            android:textColor="@color/colorTextForm"
+                            android:textSize="@dimen/form_text_size" />
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlEMIDueDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center">
+
+                    <LinearLayout
+                        android:weightSum="2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/imgfull"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:background="@drawable/price_bg"
+                        android:padding="@dimen/small_padding">
+
+                        <customtools.RegularTextView
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/form_text_size"
+                            android:text="EMI Due Date"
+                            android:textColor="@color/colorTextBlack" />
+
+                        <customtools.LightTextView
+                            android:id="@+id/lblEMIDuedate"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:text=""
+                            android:textColor="@color/colorTextForm"
+                            android:textSize="@dimen/form_text_size" />
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlEMIAmount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center">
+
+                    <LinearLayout
+                        android:weightSum="2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/imgfull"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:background="@drawable/price_bg"
+                        android:padding="@dimen/small_padding">
+
+                        <customtools.RegularTextView
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/form_text_size"
+                            android:text="EMI Amount"
+                            android:textColor="@color/colorTextBlack" />
+
+                        <customtools.LightTextView
+                            android:id="@+id/lblEMIAmount"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:text=""
+                            android:textColor="@color/colorTextForm"
+                            android:textSize="@dimen/form_text_size" />
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+
+
+                <RelativeLayout
+                    android:id="@+id/rlEMIPeriod"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center">
+
+                    <LinearLayout
+                        android:weightSum="2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/imgfull"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:background="@drawable/price_bg"
+                        android:padding="@dimen/small_padding">
+
+                        <customtools.RegularTextView
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/form_text_size"
+                            android:text="EMI Period"
+                            android:textColor="@color/colorTextBlack" />
+
+                        <customtools.LightTextView
+                            android:id="@+id/lblEMIPeriod"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:text=""
+                            android:textColor="@color/colorTextForm"
+                            android:textSize="@dimen/form_text_size" />
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/outstand"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center">
+
+                    <LinearLayout
+                        android:weightSum="2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/imgfull"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:background="@drawable/price_bg"
+                        android:padding="@dimen/small_padding">
+
+                        <customtools.RegularTextView
+                            android:id="@+id/outs"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Total Outstanding"
+                            android:textColor="@color/colorTextBlack"
+                            android:textSize="@dimen/form_text_size" />
+
+                        <TextView
+                            android:id="@+id/lblOutstand"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:text=""
+                            android:textColor="@color/colorTextForm"
+                            android:textSize="@dimen/form_text_size" />
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/totaloutstand"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center">
+
+                    <LinearLayout
+                        android:weightSum="2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/imgfull"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:background="@drawable/price_bg"
+                        android:padding="@dimen/small_padding">
+
+                        <customtools.RegularTextView
+                            android:id="@+id/totalouts"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/form_text_size"
+                            android:text="Total Payable"
+                            android:textColor="@color/colorTextBlack" />
+
+                        <TextView
+                            android:id="@+id/lblOutstandTotal"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:text=""
+                            android:textColor="@color/colorTextForm"
+                            android:textSize="@dimen/form_text_size" />
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+
+                <customtools.RegularTextView
+                    android:id="@+id/lblMandatForm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text=""
+                    android:visibility="visible"
+                    android:textColor="@color/gray_btn_bg_color"
+                    android:textSize="@dimen/heading1_text_size" />
+
+
+                <TextView
+                    android:id="@+id/lblDisplay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="44dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text=""
+                    android:visibility="gone"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="@dimen/heading1_text_size" />
+
+            </LinearLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/foot"
+            android:weightSum="1"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <customtools.MediumButton
+                android:id="@+id/btnProceedToPay"
+                android:layout_weight="1"
+                android:background="@color/colorPrimaryDark"
+                android:textColor="@color/colorWindowBackground"
+                android:text="PAY NOW"
+                android:textSize="@dimen/tap_text_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>
