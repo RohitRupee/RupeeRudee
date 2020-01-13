@@ -362,6 +362,45 @@
 
                 </RelativeLayout>
 
+                <RelativeLayout
+                    android:id="@+id/emiPayble"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center">
+
+                    <LinearLayout
+                        android:weightSum="2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/imgfull"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:background="@drawable/price_bg"
+                        android:padding="@dimen/small_padding">
+
+                        <customtools.RegularTextView
+                            android:id="@+id/emipayble"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/form_text_size"
+                            android:text="EMI Payable"
+                            android:textColor="@color/colorTextBlack" />
+
+                        <TextView
+                            android:id="@+id/emipaybleText"
+                            android:layout_weight="1"
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:text=""
+                            android:textColor="@color/colorTextForm"
+                            android:textSize="@dimen/form_text_size" />
+                    </LinearLayout>
+
+                </RelativeLayout>
 
                 <customtools.RegularTextView
                     android:id="@+id/lblMandatForm"

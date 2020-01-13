@@ -66,6 +66,7 @@
                 android:layout_below="@+id/btnUpdate"
                 android:layout_marginTop="@dimen/_5sdp"
                 android:gravity="center"
+                android:visibility="gone"
                 android:text="NOT NOW"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_12sdp" />

@@ -69,11 +69,32 @@
                 <customtools.MediumTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Interest  "
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp"
+                    android:text="Repayment Amount"/>
+                <customtools.RegularTextView
+                    android:id="@+id/repaymentamount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$50000"
+                    android:textColor="@color/black"
+                    android:layout_alignParentRight="true"
+                    android:gravity="left"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10sdp">
+
+                <customtools.MediumTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Loan Tenure"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_12sdp" />
                 <customtools.RegularTextView
-                    android:id="@+id/interested"
+                    android:id="@+id/loanTenure"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="$50000"
@@ -92,33 +113,12 @@
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_12sdp"
-                    android:text="Approval Fees"/>
+                    android:text="Repayment Date"/>
                 <customtools.RegularTextView
-                    android:id="@+id/approvalfees"
+                    android:id="@+id/repaymentDate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Upto 2.5%  "
-                    android:textColor="@color/black"
-                    android:layout_alignParentRight="true"
-                    android:gravity="left"/>
-            </RelativeLayout>
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_10sdp">
-
-                <customtools.MediumTextView
-                    android:id="@+id/txtAmountbefore"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_12sdp"
-                    android:text="Tenure "/>
-                <customtools.RegularTextView
-                    android:id="@+id/teniure"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Upto 10%"
                     android:textColor="@color/black"
                     android:layout_alignParentRight="true"
                     android:gravity="left"/>
@@ -127,7 +127,7 @@
                 android:id="@+id/close"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Close"
+                android:text="Apply"
                 android:gravity="center"
                 android:background="@color/colorPrimary"
                 android:textColor="@color/white"

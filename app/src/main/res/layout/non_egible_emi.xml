@@ -162,19 +162,115 @@
                 </RelativeLayout>
 
             </RelativeLayout>
-
-
-
-            <customtools.MediumTextView
-                android:id="@+id/apply"
+            <LinearLayout
+                android:id="@+id/linDetails"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_30sdp"
-                android:background="@color/colorPrimary"
-                android:gravity="center"
-                android:padding="@dimen/_5sdp"
-                android:text="Apply"
-                android:textColor="@color/white" />
+                android:visibility="gone"
+                android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp">
+
+                <customtools.MediumTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp"
+                    android:text="Loan Amount Requested"/>
+                <customtools.RegularTextView
+                    android:id="@+id/loanamountrequestred"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$50000"
+                    android:textColor="@color/black"
+                    android:layout_alignParentRight="true"
+                    android:gravity="left"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp">
+
+                <customtools.MediumTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp"
+                    android:text="Repayment Amount"/>
+                <customtools.RegularTextView
+                    android:id="@+id/repaymentamount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$50000"
+                    android:textColor="@color/black"
+                    android:layout_alignParentRight="true"
+                    android:gravity="left"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp">
+
+                <customtools.MediumTextView
+                    android:id="@+id/txtAmountbelow30"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp"
+                    android:text="Repayment Date"/>
+                <customtools.RegularTextView
+                    android:id="@+id/repaymentDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Upto 2.5%  "
+                    android:textColor="@color/black"
+                    android:layout_alignParentRight="true"
+                    android:gravity="left"/>
+            </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lin1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_6sdp"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btnCalculate"
+                    android:layout_width="match_parent"
+                    android:layout_height="40sp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/_50sdp"
+                    android:layout_marginRight="@dimen/_50sdp"
+                    android:background="@drawable/apply_btn_bg"
+                    android:text="  APPLY  NOW   "
+                    android:textColor="@color/colorWindowBackground"
+                    android:textSize="@dimen/_12sdp" />
+
+                <customtools.MediumTextView
+                    android:id="@+id/calculate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:visibility="visible"
+                    android:padding="@dimen/_5sdp"
+                    android:layout_margin="@dimen/_2sdp"
+                    android:gravity="center"
+                    android:text="@string/check_how_much"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="@dimen/_12sdp" />
+
+            </LinearLayout>
+
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 </LinearLayout>

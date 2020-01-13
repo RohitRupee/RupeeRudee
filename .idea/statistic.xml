@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Statistic">
+    <option name="fileTypes" value="" />
+    <option name="separateTabsFileTypes" value="java;" />
+    <option name="excludeDotArtifactDirectory" value="true" />
+    <option name="activateWhenOpenProject" value="true" />
+  </component>
+</project>

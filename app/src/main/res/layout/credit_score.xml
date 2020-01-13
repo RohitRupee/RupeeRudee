@@ -34,21 +34,16 @@
             android:textColor="#000000"
             android:textSize="@dimen/_14sdp"
             android:layout_margin="20dp"
-            android:text="Currently you do not have any credit score."/>
+            android:text="You are new to credit as per credit bureaus and hence your score could not be generated. Apply for a loan now to build your credit history."/>
     </LinearLayout>
     <RelativeLayout
-        android:id="@+id/showcreddit"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="@dimen/_70sdp"
-        android:visibility="gone"
-        android:src="@drawable/experian"
-        android:layout_margin="@dimen/_10sdp"/>
 
     <RelativeLayout
+        android:id="@+id/showcreddit"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true">
@@ -75,10 +70,11 @@
 
     </RelativeLayout>
         <RelativeLayout
+            android:id="@+id/relApply"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_margin="@dimen/_10sdp"
+            android:layout_margin="@dimen/_5sdp"
             >
         <customtools.MediumTextView
             android:id="@+id/txtNewcredit"
@@ -87,6 +83,7 @@
             android:textColor="@color/black"
             android:textSize="@dimen/_10sdp"
             android:gravity="center"
+            android:layout_marginTop="@dimen/_20sdp"
             android:layout_marginLeft="@dimen/_10sdp"
             android:layout_marginRight="@dimen/_10sdp"
             android:text="Your latest credit score shall be updated here when you apply for another loan through RupeeRedee"/>

@@ -193,7 +193,7 @@ public class OldCreditSesameView extends View {
         //外层圆环文本画笔设置
         mTextPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mTextPaint.setColor(getResources().getColor(R.color.black));
-        mTextPaint.setTextSize(30);
+        mTextPaint.setTextSize(25);
 
         //中间文字画笔设置
         mCenterTextPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
@@ -305,7 +305,7 @@ public class OldCreditSesameView extends View {
         canvas.translate(radius, radius);
         canvas.rotate(270);
         canvas.drawArc(mMiddleProgressArc, -mStartAngle, mCurrentAngle, false, mMiddleProgressPaint);
-        canvas.rotate(68 + mCurrentAngle);
+        canvas.rotate(58 + mCurrentAngle);
         Matrix matrix = new Matrix();
         matrix.preTranslate(-oval4 - mBitmapWidth * 3 / 8, -mBitmapHeight / 2);
         canvas.drawBitmap(mBitmap, matrix, mPointerBitmapPaint);
@@ -321,14 +321,14 @@ public class OldCreditSesameView extends View {
 
         //绘制信用分数
         mCenterTextPaint.setColor(getResources().getColor(R.color.colorPrimary));
-        mCenterTextPaint.setTextSize(200);
+        mCenterTextPaint.setTextSize(60);
        // mCenterTextPaint.setStyle(Paint.Style.STROKE);
-        canvas.drawText(String.valueOf(mMinNum), radius, radius + 70, mCenterTextPaint);
+        canvas.drawText(String.valueOf(mMinNum), radius, radius + 20, mCenterTextPaint);
 
         //绘制信用级别
         mCenterTextPaint.setColor(getResources().getColor(R.color.colorAccent));
-        mCenterTextPaint.setTextSize(80);
-        canvas.drawText(CreditScore.strStatus, radius, radius + 160, mCenterTextPaint);
+        mCenterTextPaint.setTextSize(40);
+        canvas.drawText(CreditScore.strStatus, radius, radius + 60, mCenterTextPaint);
 
     }
 
@@ -370,15 +370,10 @@ public class OldCreditSesameView extends View {
      * 分别绘制外层 中间 内层圆环
      */
     private void drawArc(Canvas canvas) {
-
         canvas.save();
         canvas.translate(width / 2, height / 2);
-
-        //画最外层的渐变圆环
         canvas.rotate(140);
         canvas.drawArc(mOuterArc, -mStartAngle, -mEndAngle, false, mGradientRingPaint);
-
-        //绘制内圈圆形
         canvas.drawArc(mInnerArc, -mStartAngle, -mEndAngle, false, mInnerRingPaint);
         canvas.drawArc(mMiddleArc, -mStartAngle, -mEndAngle, false, mMiddleRingPaint);
         canvas.restore();

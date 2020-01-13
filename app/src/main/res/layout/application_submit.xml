@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <views.CheckView
+        android:id="@+id/check"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerInParent="true"
+        app:checkView_strokeColor="@color/green"
+        android:layout_margin="@dimen/_10sdp"
+        android:layout_gravity="center"
+        app:checkView_strokeWidth="10dp"
+        />
+</LinearLayout>

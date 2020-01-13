@@ -37,6 +37,7 @@ public class CreditScore extends Fragment {
     MediumTextView txtDate;
     public static String strStatus="";
     Button btnApply;
+    MediumTextView txtNewcredit;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -46,6 +47,7 @@ public class CreditScore extends Fragment {
         linShow=view.findViewById(R.id.showcreddit);
         txtDate=view.findViewById(R.id.txtdate);
         btnApply=view.findViewById(R.id.btnCalculate);
+        txtNewcredit=view.findViewById(R.id.txtNewcredit);
         sessionManager = new SessionManager(getActivity());
         strMobileNumber = sessionManager.getUserRecord().get(UserRecords.mobile);
         new CheckCreditScore(strMobileNumber).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
@@ -100,15 +102,27 @@ public class CreditScore extends Fragment {
                     strStatus = hashMap.get("creditstatus");
                     String strCreditDate=hashMap.get("createdDate");
                     txtDate.setText("This credit score is courtsey Experian as on "+strCreditDate);
-                    linShow.setVisibility(View.VISIBLE);
-                    linHide.setVisibility(View.GONE);
+
                     oldCreditSesameView.setSesameValues(Integer.parseInt(strCreditScore));
+                    if(strStatus.equalsIgnoreCase("NTC"))
+                    {
+                        linShow.setVisibility(View.GONE);
+                        linHide.setVisibility(View.VISIBLE);
+                        txtNewcredit.setVisibility(View.GONE);
+                    }
+                    else
+                    {
+                        linShow.setVisibility(View.VISIBLE);
+                        linHide.setVisibility(View.GONE);
+                        txtNewcredit.setVisibility(View.VISIBLE);
+                    }
 
                 }
                 else if (status.equals("false")) {
 
                     linShow.setVisibility(View.GONE);
                     linHide.setVisibility(View.VISIBLE);
+                    txtNewcredit.setVisibility(View.GONE);
 
 
 

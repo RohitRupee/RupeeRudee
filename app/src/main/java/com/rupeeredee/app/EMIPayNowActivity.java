@@ -23,7 +23,6 @@ import ccavconstants.ServiceUtility;
 import connectivity.ConnectivityReceiver;
 import customtools.LightTextView;
 import customtools.RegularTextView;
-import model.CommonParser;
 import model.PayNow;
 import model.UserRecords;
 import services.ApiConstants;
@@ -52,6 +51,9 @@ public class EMIPayNowActivity extends AppCompatActivity {
     TextView lblOutstandTotal;
     String strPaymentType = "";
     public static EMIPayNowActivity fadd;
+    RelativeLayout emiPayble;
+
+    TextView emipaybleText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -87,6 +89,9 @@ public class EMIPayNowActivity extends AppCompatActivity {
         rlEMIAmount = findViewById(R.id.rlEMIAmount);
         lblEMIAmount = findViewById(R.id.lblEMIAmount);
         txtPayType = findViewById(R.id.txtPayType);
+        emiPayble = findViewById(R.id.emiPayble);
+        emipaybleText=findViewById(R.id.emipaybleText);
+
         foot=findViewById(R.id.foot);
         lblOutstandTotal=findViewById(R.id.lblOutstandTotal);
         if (strPaymentType.equalsIgnoreCase("FullPayment")) {
@@ -335,6 +340,7 @@ public class EMIPayNowActivity extends AppCompatActivity {
                     String strEMIDate = hashMap.get("emiDate");
                     String strEMIPeriod = hashMap.get("emiPeriod");
                     String strEMIAmount = hashMap.get("emiAmount");
+                    strTotalOutstanding=strEMIAmount;
                     String strLoanType = hashMap.get("LoanType");
                     lblLoanNum.setText(strLoanNum);
                     lblLoanAmt.setText("\u20B9 " + ApiConstants.roundOffString(strLoanAmount));
@@ -343,10 +349,13 @@ public class EMIPayNowActivity extends AppCompatActivity {
                     if(strEMIAmount.equalsIgnoreCase("0"))
                     {
                         foot.setVisibility(View.GONE);
+                        emiPayble.setVisibility(View.GONE);
                     }
                     else
                     {
                         foot.setVisibility(View.VISIBLE);
+                        emiPayble.setVisibility(View.VISIBLE);
+                        emipaybleText.setText("\u20B9 " +strEMIAmount);
 
                     }
                     lblEMIAmount.setText("\u20B9 " + ApiConstants.roundOffString(strEMIAmount));
@@ -422,6 +431,7 @@ public class EMIPayNowActivity extends AppCompatActivity {
                 if (strStatus.equalsIgnoreCase("true")) {
 
 
+                    emiPayble.setVisibility(View.GONE);
 
                     String strLoanAmount = hashMap.get("loanAmount");
                     String strLoanTenure = hashMap.get("loanTenure");
@@ -520,6 +530,7 @@ public class EMIPayNowActivity extends AppCompatActivity {
                     strTotalOutstanding = hashMap.get("totalOutstanding");
                     foot.setVisibility(View.VISIBLE);
 
+                    emiPayble.setVisibility(View.GONE);
 
 
                     lblLoanNum.setText(strLoanNum);
